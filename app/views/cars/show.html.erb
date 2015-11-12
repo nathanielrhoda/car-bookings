@@ -1,0 +1,22 @@
+<article>
+	<header>
+		<h1><%= @car.title %></h1>
+	</header>
+
+	<h2>Description</h2>
+	<p>
+		<%= @car.description %>
+	</p>
+
+	<h3>Features</h3>
+	<p>
+		<%= @car.features %>
+	</p>
+
+	<h3>Daily Rate</h3>
+	<p>
+		<%= number_to_currency(@car.daily_rate, unit: "R") %>
+	</p>
+</article>
+
+<%= link_to "All Cars", cars_path %>
