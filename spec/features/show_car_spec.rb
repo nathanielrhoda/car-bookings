@@ -3,10 +3,7 @@ require "spec_helper"
 describe "Viewing a single car" do
 
 	it "shows the cars details" do
-		car = Car.create(title: "Crystler Hemi Sport",
-										description: "Arrive in Style",
-										features: "Black Leather Interia and a music system",
-										daily_rate: 1800.00)
+		car = Car.create(car_attributes(daily_rate: 1800.00))
 
 		visit car_url(car)
 
