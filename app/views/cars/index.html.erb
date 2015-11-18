@@ -18,9 +18,9 @@
 
 				<tr>
 					<th>Daily Rate</th>
-					<td><%= number_to_currency(car.daily_rate, :unit => "R") %></td>
+					<td><%= number_to_currency(car.daily_rate, :unit => "R") %></td> 
 				</tr>
 			</table>
 	</article>
 <% end %>
-
+	<%= link_to "Add New Car", new_car_path(@car) %>

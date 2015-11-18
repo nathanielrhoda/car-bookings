@@ -1,0 +1,29 @@
+<h1>Create Car</h1>
+
+<%= form_for(@car) do |f| %>
+
+	<p>
+		<%= f.label :title %><br/>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :description %><br/>
+		<%= f.text_area :description, cols: 40, rows: 7 %>
+	</p>
+
+	<p>
+		<%= f.label :features %><br/>
+		<%= f.text_field :features %>
+	</p>
+
+	<p>
+		<%= f.label :daily_rate %><br/>
+		<%= f.number_field :daily_rate %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
