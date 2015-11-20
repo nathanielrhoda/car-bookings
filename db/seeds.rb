@@ -12,7 +12,7 @@ Car.create!([
 		features: "Has Black Leather Interia and music system",
 		description: "Suitable for any occasion eg. Matric Dance, Weddings ect.",
 		daily_rate: 1800.00,
-		image_file_name: "Hummer h3.jpg"
+		image_file_name: "Hummer.jpg"
 	},
 
 	{
