@@ -13,6 +13,8 @@ describe "Creating a new car" do
 		fill_in "Description", with: "Suitable for any occasion eg. Matric Dance, Weddings ect."
 		fill_in "Daily rate", with: "1800.00"
 
+		fill_in "Image file name", with: "car.jpg"
+
 		click_button 'Create Car'
 
 		expect(current_path).to eq(car_path(Car.last))

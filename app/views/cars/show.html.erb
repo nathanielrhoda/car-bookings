@@ -17,9 +17,15 @@
 	<p>
 		<%= number_to_currency(@car.daily_rate, unit: "R") %>
 	</p>
+
+	<h3>Image</h3>
+	<%= image_tag(@car.image_file_name) %>
+	<%= image_for(@car) %>
+
 </article>
 
 <nav>
 	<%= link_to "All Cars", cars_path %>
 	<%= link_to "Edit", edit_car_path(@car) %>
+	<%= link_to "Delete", car_path(@car), method: :delete, data: {confirm: 'Are you sure?'} %>
 </nav>

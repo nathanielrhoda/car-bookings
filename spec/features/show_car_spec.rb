@@ -11,5 +11,6 @@ describe "Viewing a single car" do
 		expect(page).to have_text(car.description)
 		expect(page).to have_text("R1,800.00")
 		expect(page).to have_text(car.features)
+		expect(page).to have_selector("img[src$='#{car.image_file_name}']")
 	end
 end

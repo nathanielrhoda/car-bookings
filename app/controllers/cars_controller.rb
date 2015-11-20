@@ -30,9 +30,19 @@ class CarsController < ApplicationController
 		@car = Car.new
 	end
 
+	def destroy
+		@car = Car.find(params[:id])
+		@car.destroy
+		redirect_to cars_url
+	end
+
+	def car_params
+		params.require(:car).permit(:title, :description, :features, :daily_rate, )
+	end
+
 private
 	def car_params
-		params.require(:car).permit(:title, :description, :features, :daily_rate)
+		params.require(:car).permit(:title, :description, :features, :daily_rate, :image_file_name)
 	end
 end
 
