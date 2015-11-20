@@ -6,7 +6,7 @@ describe "Navigating cars" do
 
 		visit car_url(car)
 
-		click_link "All Cars"
+		first(:link, "All Cars").click
 
 		expect(current_path).to eq(cars_path)
 	end

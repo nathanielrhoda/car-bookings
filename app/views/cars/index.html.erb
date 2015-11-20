@@ -3,10 +3,9 @@
 <% @cars.each do |car| %>
 	<article>
 			<header>
-				<%= image_tag(car.image_file_name) %>
+				<h2><%= link_to car.title, car_path(car) %></h2>
 				<%= image_for(car) %>
 
-				<h2><%= link_to car.title, car_path(car) %></h2>
 			</header>
 
 			<p>

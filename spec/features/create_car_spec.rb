@@ -4,7 +4,7 @@ describe "Creating a new car" do
 	it "saves the car and shows the new car's details" do 
 		visit cars_url
 
-		click_link 'Add New Car'
+		first(:link, "Add New Car").click
 
 		expect(current_path).to eq(new_car_path)
 
