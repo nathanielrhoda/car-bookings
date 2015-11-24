@@ -20,4 +20,15 @@ describe "Creating a new car" do
 		expect(current_path).to eq(car_path(Car.last))
 		expect(page).to have_text('Crystler Hemi Sport')
 	end
+
+	it "does not save the car if it's invalid" do 
+		visit new_car_url
+
+		expect {
+			click_button 'Create Car'
+		}.not_to change(Car, :count)
+
+		expect(current_path).to eq(cars_path)
+		expect(page).to have_text('error')
+	end
 end

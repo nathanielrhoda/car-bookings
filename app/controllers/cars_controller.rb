@@ -14,16 +14,20 @@ class CarsController < ApplicationController
 
 	def update
 		@car = Car.find(params[:id])
-		car_params = params.require(:car).permit(:title, :description, :features, :daily_rate)
-		@car.update(car_params)
-		redirect_to @car
+		if @car.update(car_params)
+			redirect_to @car
+		else
+			render :edit
+		end
 	end
 
 	def create
-		car_params = params.require(:car).permit(:title, :description, :features, :daily_rate)
 		@car = Car.new(car_params)
-		@car.save
-		redirect_to @car
+		if @car.save
+			redirect_to @car
+		else
+			render :new
+		end
 	end
 	
 	def new

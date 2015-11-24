@@ -1,7 +1,7 @@
 def car_attributes(overrides = {})
 	{
 		title: "Crystler Hemi Sport",
-		description: "Arrive in Style",
+		description: "Arrive in Style with the new beautiful Crystler",
 		features: "Black Leather Interia and a music system",
 		daily_rate: 1800.00,
 		image_file_name: "crystler 1.jpg"
