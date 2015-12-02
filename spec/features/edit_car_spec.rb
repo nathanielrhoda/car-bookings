@@ -15,6 +15,8 @@ describe "Edits a car" do
 		click_button 'Update Car'
 		expect(current_path).to eq(car_path(car))
 		expect(page).to have_text('Updated Car Title')
+
+		expect(page).to have_text('Car successfully updated!')
 	end
 
 	it "does not update the car if it's invalid" do 

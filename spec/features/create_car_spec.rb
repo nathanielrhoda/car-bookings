@@ -19,6 +19,8 @@ describe "Creating a new car" do
 
 		expect(current_path).to eq(car_path(Car.last))
 		expect(page).to have_text('Crystler Hemi Sport')
+
+		expect(page).to have_text('Car successfully created!')
 	end
 
 	it "does not save the car if it's invalid" do 

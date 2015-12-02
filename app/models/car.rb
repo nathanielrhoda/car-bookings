@@ -1,4 +1,6 @@
 class Car < ActiveRecord::Base
+	has_many :reviews, dependent: :destroy
+
 	validates :title, :features, presence: true
 	validates :description, length: { minimum: 25 }
 	validates :daily_rate, numericality: { greater_than_or_equal_to: 0 }  

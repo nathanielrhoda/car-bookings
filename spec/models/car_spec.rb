@@ -80,4 +80,24 @@ describe "A car" do
 
 		expect(car.valid?).to eq(true)
 	end
+
+	it "has many reviews" do 
+		car = Car.new(car_attributes)
+
+		review1 = car.reviews.new(review_attributes)
+		review2 = car.reviews.new(review_attributes)
+
+		expect(car.reviews).to include(review1)
+		expect(car.reviews).to include(review2)
+	end
+
+	it "deletes associated reviews" do 
+		car = Car.create(car_attributes)
+
+		car.reviews.create(review_attributes)
+
+		expect {
+			car.destroy
+		}.to change(Review, :count).by(-1)
+	end
 end

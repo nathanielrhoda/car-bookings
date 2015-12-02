@@ -23,8 +23,10 @@
 	
 </article>
 
-<nav>
+<footer>
+	<%= link_to "Write Review", new_car_review_path(@car), 
+								class: 'button ok review' %>
 	<%= link_to "All Cars", cars_path %>
 	<%= link_to "Edit", edit_car_path(@car) %>
 	<%= link_to "Delete", car_path(@car), method: :delete, data: {confirm: 'Are you sure?'} %>
-</nav>
+</footer>

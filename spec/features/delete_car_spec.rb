@@ -10,5 +10,7 @@ describe "Deleting a car" do
 
 		expect(current_path).to eq(cars_path)
 		expect(page).not_to have_text(car.title)
+
+		expect(page).to have_text("Car successfully deleted!")
 	end
 end

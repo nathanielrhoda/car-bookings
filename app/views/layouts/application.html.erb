@@ -10,7 +10,6 @@
 	<header style="padding: 5px; color: #F0F0F0: background: #7CFC00:">
 		<h1>Fern Funerals</h1>
 	</header>
-
 	<aside style="float: right; background: #F0F0F0; width: 200px;">
 		<nav>
 			<ul>
@@ -21,6 +20,18 @@
 					<%= link_to 'Add New Car', new_car_path %>
 				</li>
 			</ul>
+			<div id="wrapper">
+				<% if flash[:notice] %>
+					<p class="flash notice">
+						<%= flash[:notice] %>
+					</p>
+				<% end %>
+			</div id="container">
+			<% if flash[:alert] %>
+				<p class="flash alert">
+					<%= flash[:alert] %>
+				</p>
+			<% end %>
 		</nav>
 	</aside>
 

@@ -15,7 +15,7 @@ class CarsController < ApplicationController
 	def update
 		@car = Car.find(params[:id])
 		if @car.update(car_params)
-			redirect_to @car
+			redirect_to @car, notice: "Car successfully updated!"
 		else
 			render :edit
 		end
@@ -24,7 +24,7 @@ class CarsController < ApplicationController
 	def create
 		@car = Car.new(car_params)
 		if @car.save
-			redirect_to @car
+			redirect_to @car, notice: "Car successfully created!"
 		else
 			render :new
 		end
@@ -37,7 +37,7 @@ class CarsController < ApplicationController
 	def destroy
 		@car = Car.find(params[:id])
 		@car.destroy
-		redirect_to cars_url
+		redirect_to cars_url, alert: "Car successfully deleted!"
 	end
 
 	def car_params
@@ -47,6 +47,10 @@ class CarsController < ApplicationController
 private
 	def car_params
 		params.require(:car).permit(:title, :description, :features, :daily_rate, :image_file_name)
+	end
+
+	def set_car
+		@car = Car.find(params[:car_id])
 	end
 end
 

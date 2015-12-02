@@ -5,22 +5,18 @@
 			<header>
 				<h2><%= link_to car.title, car_path(car) %></h2>
 				<%= image_for(car) %>
-
 			</header>
-
 			<p>
 				<%= truncate(car.description, length: 40, separator: ' ') %>
 			</p>
-
 			<table>
 				<tr>
 					<th>Features:</th>
 					<td><%= car.features %></td>
 				</tr>
-
 				<tr>
 					<th>Daily Rate</th>
-					<td><%= number_to_currency(car.daily_rate, :unit => "R") %></td> 
+					<td><%= number_to_currency(car.daily_rate, :unit => "R") %></td>
 				</tr>
 			</table>
 	</article>

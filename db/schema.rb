@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119134433) do
+ActiveRecord::Schema.define(version: 20151126115405) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start_time"
+    t.integer  "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "bookings", ["car_id"], name: "index_bookings_on_car_id"
 
   create_table "cars", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +31,17 @@ ActiveRecord::Schema.define(version: 20151119134433) do
     t.datetime "updated_at",      null: false
     t.text     "description"
     t.string   "image_file_name"
+    t.string   "calendar_id"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "name"
+    t.text     "comment"
+    t.integer  "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["car_id"], name: "index_reviews_on_car_id"
 
 end
