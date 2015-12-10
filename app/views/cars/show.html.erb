@@ -30,3 +30,5 @@
 	<%= link_to "Edit", edit_car_path(@car) %>
 	<%= link_to "Delete", car_path(@car), method: :delete, data: {confirm: 'Are you sure?'} %>
 </footer>
+
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=<%= @car.calendar_id %>group.calendar.google.com&amp;color=%230F4B38&amp;ctz=Africa%2FJohannesburg" style="border-width:0" width="900" height="600" frameborder="0" scrolling="no"></iframe>
