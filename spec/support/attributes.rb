@@ -14,3 +14,12 @@ def review_attributes(overrides = {})
 		comment: "I would recommend this company to all my friends"
 	}.merge(overrides)
 end
+
+def user_attributes(overrides = {})
+	{
+		name: "Example User",
+		email: "user@example.com", 
+		password: "secret",
+		password_confirmation: "secret"
+	}.merge(overrides)
+end
