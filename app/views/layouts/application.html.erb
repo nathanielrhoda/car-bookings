@@ -9,8 +9,13 @@
 <body>
 	<header style="padding: 5px; color: #F0F0F0: background: #7CFC00:">
 		<h1>Fern Funerals</h1>
+
+		<p>
+			<img src="<%= asset_path( 'redcarpet.jpg' ) %>" />
+		</p>
+
 	</header>
-	<aside style="float: right; background: #F0F0F0; width: 200px;">
+	<aside style="float: right; background: #F0F0F0; width: 150px;">
 		<nav>
 			<ul>
 				<li>
@@ -42,8 +47,8 @@
 <%= yield %>
 
 <footer style="text-align: center; padding: 5px; color: #7CFC00; background: #F0F0F0">
-	Copyright &copy; 2015
-	<%= link_to 'Fern Funerals cc','http://fernfunerals.com' %>
+	
+	<%= link_to 'Fern Funerals cc','http://fernfunerals.co.za' %>
 </footer>
 </body>
 </html>
